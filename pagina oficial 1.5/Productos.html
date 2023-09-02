@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Rubio</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    
+    <style>
+    
+        /* Estilos generales */
+        body {
+            background-image: url("f\ \(1\).png"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    /* Estilos del encabezado con imagen */
+    .header {
+            background-image: url("im\ rt.png"); 
+            background-size: contain;
+            
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: white;
+        }
+
+        /* Estilos de la barra de navegación */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1ce6e6;
+        }
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+        /* Estilos de los productos destacados */
+
+        .featured-products {
+
+            background-image: url("f\ \(1\).png"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .featured-products {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+            text-align: center;
+           
+        }
+
+        
+
+
+        .product-card {
+    border: 2px solid #e0c10d; /* Cambia el ancho y el color del borde según tus preferencias */
+    border-radius: 10px; /* Agrega bordes redondeados */
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    background-color: rgb(248, 224, 9); /* Cambia el color de fondo si lo deseas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra */
+    transition: transform 0.3s, box-shadow 0.3s; /* Agrega transiciones para animar los cambios */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta ligeramente en el hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Aumenta la intensidad de la sombra en el hover */
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #333;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;/* Cambia la tipografía según tus preferencias */
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #888;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Cambia la tipografía según tus preferencias */
+}
+
+/* Estilos del título de los productos destacados */
+
+    
+
+.featured-products h1 {
+   
+
+    font-size: 54px;
+    margin-bottom: 40px;
+    color: #05030a;
+    text-shadow: 2px 2px 4px rgba(190, 192, 164, 0.8);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 3px solid #8ebdba;
+    border-radius: 20px;
+    padding: 30px;
+    display: inline-block;
+    background-color: rgba(185, 214, 214, 0.95);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.featured-products h1:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.15);
+}
+
+        .product-card img {
+            max-width: 100%;
+           height: 200px; ;
+        }
+       
+/* Estilos de la sección de categoría de productos */
+.product-categories {
+    background-image: url("f\ \(1\).png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 150px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.product-categories h2 {
+    font-size: 40px;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    margin-bottom: 60px;
+}
+
+.product-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-categories li {
+    margin-bottom: 20px;
+}
+
+.product-categories a {
+    text-decoration: none;
+    color: #3510bb;
+    font-size: 42px;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.product-categories a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #3510bb;
+    transition: width 0.3s ease-in-out;
+}
+
+.product-categories a:hover::before {
+    width: 100%;
+}
+
+.product-categories a:hover {
+    color: #2186c4;
+}
+
+/* Borde y estilo para los enlaces activos */
+.product-categories a.active {
+    border: 2px solid #e44040;
+    border-radius: 5px;
+    color: #e44040;
+    text-decoration: underline;
+    padding: 10px 20px;
+}
+
+
+/* Estilos de la sección de categoría */
+
+.category-section {
+            background-image: url("f\ \(1\).png"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+.category-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.category-section h3 {
+    font-size: 28px;
+    margin-top: 20px;
+    color: #3510bb;
+    font-family: "Arial", sans-serif;
+    text-transform: uppercase; /* Transforma el texto a mayúsculas */
+}
+
+.category-section p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    font-family: "Arial", sans-serif;
+}
+.higiene-product {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.higiene-product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.higiene-product h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: "Arial", sans-serif;
+}
+
+.higiene-product p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-family: "Arial", sans-serif;
+}
+
+.higiene-product:before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: calc(50% - 15px); /* Ajusta el valor para centrar el círculo */
+    width: 30px;
+    height: 30px;
+    background-color: #330bc4;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: -1; /* Coloca el círculo detrás del contenido */
+}
+
+.higiene-product img {
+    
+            max-width: 100%;
+           height: 300px; ;
+    
+}
+/* Estilos para la sección de alimentos */
+.category-section {
+    padding: 120px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.category-section h1 {
+    display: none; /* Ocultar el título de texto */
+}
+
+.category-section .title-image {
+    margin-bottom: 50px;
+}
+
+.category-section .title-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.alimentos-product {
+    background-color: white;
+    border: 3px solid #ddd;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.alimentos-product img {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.alimentos-product h3 {
+    font-size: 32px;
+    margin-top: 30px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.alimentos-product p {
+    font-size: 28px;
+    color: #666;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.alimentos-product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para la sección de bebidas */
+.category-section {
+    padding: 120px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.category-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px; /* Espacio entre la imagen y el contenido */
+}
+
+.product-bebidas {
+    background-color: white;
+    border: 3px solid #ddd;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 20px auto; /* Ajustar el margen inferior */
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-bebidas img {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.product-bebidas h3 {
+    font-size: 32px;
+    margin-top: 30px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.product-bebidas p {
+    font-size: 28px;
+    color: #666;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.product-bebidas:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 18px rgba(0, 0, 0, 0.15);
+}
+#cosmeticos {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-cosmeticos {
+    background-color: #ffffff;
+    border: 2px solid #8ebdba;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-cosmeticos img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-cosmeticos h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+    font-family: "Arial", sans-serif;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    font-family: "Arial", sans-serif;
+}
+
+        /* Estilos del pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <header class="header">
+        <h1></h1>
+    </header>
+    <header>
+        <nav>
+
+            <a href="file:///C:/Users/MINEDUCYT/Desktop/pagina%20oficial%201.5/pagina%20oficial%201.5/Tienda%20rubio.html">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="file:///C:/Users/MINEDUCYT/Desktop/pagina%20oficial%201.5/pagina%20oficial%201.5/ofertas.html">Ofertas</a>
+            <a href="file:///C:/Users/MINEDUCYT/Desktop/pagina%20oficial%201.5/pagina%20oficial%201.5/contacto.html">Contacto</a>
+        </nav>
+    </header>
+   
+        
+    
+        <section class="featured-products">
+            <h1>Descubre Nuestros Productos Destacados</h1>
+            
+            <div class="product-card">
+                <img src="Papel-HigieCC81nico-Scott-Cuidado-Completo_-12-uds-Front.jpg" alt="papel scott maxima proteccion">
+                <h3>Papel Higienico Scott Cuidado Completo 
+                    <br>(12 unidades) <br></h3>
+                <p>Precio: $7.30</p>
+            </div>
+            <div class="product-card">
+                <img src="maxi espuma 700.jpg" alt="maxi espuma 700">
+                <h3>Detergente Maxi espuma 700g 
+                    <br>(Variedad)<br></h3>
+                <p>Precio Unidad: $0.95 Precio Fardo: $11.00</p>
+            </div>
+            <!-- Más tarjetas de productos destacados -->
+        </section>
+   
+        <section class="product-categories">
+            <h2>Categorías de Productos</h2>
+            <ul>
+                <li><a href="#Higiene Personal">Higiene Personal</a></li>
+                <li><a href="#Alimentos">Alimentos</a></li>
+                <li><a href="#Bebidas">Bebidas</a></li>
+                <li><a href="#Cosméticos">Cosméticos</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <a name="Higiene Personal"></a>
+    <section id="higiene" class="category-section">
+       
+        <h1>Higiene Personal</h1>
+        <img src="titulo 1 productos.png" alt="titulo 1">
+         <div class="higiene-product">
+            <img src="papel doble oja.png" alt="papel Higienico doble hoja ">
+            <h3>Papel Higiénico Marca Scott Rindemax, Doble Hoja - 18 Rollos</h3>
+            <p>Precio: $9.45 </p>
+         </div>
+         <div class="higiene-product">
+            <img src="Captura de pantalla 2023-08-24 001210.png" alt="Kotex extra proteccio largo ">
+            <h3>Kotex extra proteccio largo (75 unidades)</h3>
+            <p>Precio: $4.00 </p>
+         </div>
+         <div class="higiene-product">
+            <img src="huggies pañales.png" alt="huggies pañales ">
+            <h3>Pañales Marca Huggies Classic Etapa 4/XG, 12-15kg - 50Uds</h3>
+            <p>Precio: $9.90 </p>
+        </div>
+    </section>
+    <a name="Alimentos"></a>
+    <section id="alimentos" class="category-section">
+        
+        <img src="titulo alimentos.png" alt="titulo alimentos">
+        <h1>Alimentos</h1>
+        <div class="alimentos-product">
+            <img src="Abarrotes-Pastas-Pastas-Cortas_7412200401045_1.webp" alt="pasta ina tornillos">
+            <h3>INA PASTA TORNILLO 
+                <br>200 GRAMOS <br></h3>
+            <p>Precio: $0.60</p>
+        </div>
+        <div class="alimentos-product">
+            <img src="soft_cake_sabor_original_.jpg" alt="soft_cake_sabor_original_">
+            <h3>Soft cake sabor original</h3>
+            <p>Precio: $2.00</p>
+        </div>
+        <div class="alimentos-product">
+            <img src="Cereal-Corn-Flakes-Kellogg-Caja-500G-1-17536.webp" alt="ceral corn flakes ">
+            <h3>Cereal Corn Flakes Kellogg Caja 
+                <br>500G <br></h3>
+            <p>Precio: $3.25</p>
+        </div>
+        <div class="alimentos-product">
+            <img src="orisol_700ml__1_.jpg" alt="aceite orisol">
+            <h3>Aceite Orisol 
+          <br>700 ml<br></h3>
+            <p>Precio: $1.95</p>
+        </div>
+        <div class="alimentos-product">
+            <img src="Abarrotes-Aceites-y-Margarinas-Aceites-de-Oliva_7413100084376_1.webp" alt="aceite orisol oliva">
+            <h3>Aceite Orisol oliva 
+                <br>700 ml <br></h3>
+            <p>Precio: $2.25</p>
+        </div>
+    </section>
+
+    <a name="Bebidas"></a>
+    <section id="bebidas" class="category-section">
+       
+        <img src="bebidas titulo.png" alt="bebidas titulo">
+        <div class="product-bebidas">
+            <img src="coca cola lata fardo.jpg" alt="coca cola lata fardo">
+            <h3>Coca-Cola sabor Original - Pack de 24 Latas</h3>
+                <p>Precio: $13.50</p>  </div>
+
+                <div class="product-bebidas">
+                    <img src="petit lata.jpg" alt="petit">
+                    <h3>Petit Jugos Surtidos 24 unidades / 330 ml</h3>
+                        <p>Precio: $13.50</p>  </div>      
+        </section>
+
+      
+
+       
+
+    <section id="cosmeticos" class="category-section">
+        <img src="cosmeticos .png" alt="cosmeticos titulo">
+        <div class="product-cosmeticos ">
+            <img src="Desodorante-Spray-Nivea-Aclarado-Natural-Dama-150Ml-1-3201.webp" alt="Desodorante-Spray-Nivea-Aclarado-Natural-Dama-150Ml-1-3201">
+            <h3>Desodorante Spray Nivea Aclarado Natural Dama - 150Ml</h3>
+                <p>Precio: $4.75</p>  </div>
+
+        </div>
+
+        <div class="product-cosmeticos ">
+            <img src="atraction.jpg" alt="ego">
+            <h3>Ego Gel Attraction 200 Ml</h3>
+                <p>Precio: $1.50</p>  </div>
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Tienda Rubio. Todos los derechos reservados.</p>
+    </footer>
+    
+    
+    
+</body>
+</html>
